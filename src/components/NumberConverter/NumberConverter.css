@@ -3,14 +3,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .convectorContainer input {
   width: 200px;
-  height: 50px;
+  height: 20px;
   border-radius: 15px;
+  border: 2px solid #fff000;
 }
 
 .convectorWrapper {
   width: fit-content;
+}
+
+.convectorInput {
+  padding: 8px;
 }

@@ -21,6 +21,7 @@ const NumberConverter = () => {
       <div className="convectorWrapper">
         <h1>Конвертер числа</h1>
         <input
+            className="convectorInput"
           type="text"
           value={input}
           onChange={handleInputChange}
