@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './NumberConverter.css';
 import CopyToClipboard from '../CopyToClipboard/CopyToClipboard.jsx';
+import ClearButton from "../Button/ClearButton.jsx";
 
 const NumberConverter = () => {
   const [input, setInput] = useState('');
@@ -27,6 +28,7 @@ const NumberConverter = () => {
           onChange={handleInputChange}
           placeholder="Введіть число, наприклад: 3 288.50"
         />
+        <ClearButton onClick={() => setInput('')}/>
         <CopyToClipboard value={convertedNumber} />
       </div>
     </div>
