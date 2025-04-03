@@ -1,33 +1,24 @@
 import React, { useState } from 'react';
+import copyTextToClipboard from "../../heplers/copyTextToClipboard.js";
+import './CopyToClipboard.css'
 
-const CopyToClipboard = ({ value }) => {
+const CopyToClipboard = ({ value, label }) => {
   const [copied, setCopied] = useState(false);
-
-  // Функція для копіювання значення
-  const copyTextToClipboard = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopied(true); // Встановлюємо стан, щоб показати, що текст скопійовано
-        setTimeout(() => setCopied(false), 2000); // Скидаємо стан через 2 секунди
-      })
-      .catch((err) => {
-        console.error('Помилка при копіюванні в буфер обміну: ', err);
-      });
-  };
 
   return (
     <div>
-      <p>Натисніть на значення, щоб скопіювати його:</p>
-      <div>
-        <span
-          style={{ cursor: 'pointer', color: 'green', fontSize: 20 }}
-          onClick={() => copyTextToClipboard(value)}
+      <div className={'clipboardContainer'}>
+          <div className={'clipboardLabel'}>
+              {label}
+          </div>
+        <div
+            className={'clipboardValue'}
+            onClick={() => copyTextToClipboard(value, setCopied)}
         >
           {value}
-        </span>
+        </div>
+          {copied && <div className={'clipboardSuccess'}>✅</div>}
       </div>
-      {copied && <p>Текст скопійовано!</p>}
     </div>
   );
 };
