@@ -32,6 +32,7 @@ const NumberConverter = () => {
           className="convectorInput"
           type="text"
           value={input}
+          ref={inputRef}
           onChange={handleInputChange}
           placeholder="Введіть число, наприклад: 3 288.50"
         />
