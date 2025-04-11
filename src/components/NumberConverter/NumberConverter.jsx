@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import './NumberConverter.css';
+import styles from './NumberConverter.module.scss';
 import CopyToClipboard from '../CopyToClipboard/CopyToClipboard.jsx';
 import ClearButton from '../Button/ClearButton.jsx';
 import { EP, VZ } from '../../constants/taxConstants.js';
@@ -11,34 +11,25 @@ const NumberConverter = () => {
   const [input, setInput] = useState('');
   const [inputCur, setInputCur] = useState('');
 
-  const convertNumberFormat = input => {
-    return input.replace(/\s/g, '').replace(/\./g, ',');
-  };
-
-  const handleInputChange = e => {
-    const value = e.target.value;
-    setInput(value);
-  };
-
   const number =
-    parseFloat(input.replace(',', '.')) *
+    parseFloat(input.replace(',', '.').replace(' ', '')) *
     (parseFloat(inputCur.replace(',', '.')) || 1);
 
   const epTax = replaceChar(number * EP);
   const militaryTax = replaceChar(number * VZ);
 
   return (
-    <div className="convectorContainer">
+    <div className={styles.convectorContainer}>
       <h1>Конвертер числа</h1>
-      <div className="convectorWrapper">
-        <div className="convectorInputWrapper">
+      <div className={styles.convectorWrapper}>
+        <div className={styles.convectorInputWrapper}>
           <div>
             <input
-              className="convectorInput"
+              className={styles.convectorInput}
               type="text"
               value={input}
               ref={inputRef}
-              onChange={handleInputChange}
+              onChange={e => setInput(e.target.value)}
               placeholder="Введіть число, наприклад: 3 288.50"
             />
             <ClearButton
@@ -50,7 +41,7 @@ const NumberConverter = () => {
           </div>
           <div>
             <input
-              className="convectorInput"
+              className={styles.convectorInput}
               type="text"
               value={inputCur}
               ref={inputCurRef}
@@ -68,7 +59,9 @@ const NumberConverter = () => {
           </div>
         </div>
         <div>
-          <p className="title">Натисніть на значення, щоб скопіювати його:</p>
+          <p className={styles.title}>
+            Натисніть на значення, щоб скопіювати його:
+          </p>
           <CopyToClipboard value={replaceChar(number)} label={'SUM:'} />
           <CopyToClipboard value={epTax || 0} label={'ЄП:'} />
           <CopyToClipboard value={militaryTax || 0} label={'ВЗ:'} />
