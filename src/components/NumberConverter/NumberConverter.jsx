@@ -23,7 +23,7 @@ const NumberConverter = () => {
   const number =
     parseFloat(input.replace(',', '.')) *
     (parseFloat(inputCur.replace(',', '.')) || 1);
-  console.log(number);
+
   const epTax = replaceChar(number * EP);
   const militaryTax = replaceChar(number * VZ);
 
