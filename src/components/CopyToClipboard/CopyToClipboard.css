@@ -5,13 +5,13 @@
 }
 
 .clipboardLabel {
-    color: ghostwhite;
+    color: #be4039;
     font-size: 23px;
 }
 
 .clipboardValue {
     cursor: pointer;
-    color: #00FF00;
+    color: #b94e56;
     font-size: 26px;
 }
 

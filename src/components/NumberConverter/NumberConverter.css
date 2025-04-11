@@ -11,13 +11,25 @@
   width: 200px;
   height: 20px;
   border-radius: 15px;
-  border: 2px solid #fff000;
+  border: 2px solid #be4039;
 }
 
 .convectorWrapper {
   width: fit-content;
+  display: flex;
+  gap: 48px;
+}
+
+.convectorInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .convectorInput {
   padding: 8px;
+}
+
+.title {
+  margin: 0 0 15px 0;
 }
