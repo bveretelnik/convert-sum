@@ -3,6 +3,7 @@ import Input from '../Input/Input.jsx';
 import CopyToClipboard from '../CopyToClipboard/CopyToClipboard.jsx';
 import replaceChar from '../../heplers/replaceChar.js';
 import { parseNumber } from '../../heplers/parseNumber.js';
+import styles from './CalculatedSum.module.scss';
 
 const CalculatedSum = () => {
   const [values, setValue] = useState(['', '']);
@@ -16,16 +17,14 @@ const CalculatedSum = () => {
   };
 
   return (
-    <div>
+    <div className={styles.calculateWrapper}>
       <Input
         value={values[0]}
         onChange={e => handleChange(0, e.target.value)}
-        placeholder={'Вставте скопійоване значення'}
       />
       <Input
         value={values[1]}
         onChange={e => handleChange(1, e.target.value)}
-        placeholder={'Вставте скопійоване значення'}
       />
       <CopyToClipboard
         value={replaceChar(

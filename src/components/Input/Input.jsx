@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import styles from './Input.module.scss';
 
-const Input = forwardRef(({ value, onChange, placeholder }, ref) => {
+const Input = forwardRef(({ value, onChange }, ref) => {
   return (
     <input
       className={styles.convectorInput}
@@ -9,7 +9,7 @@ const Input = forwardRef(({ value, onChange, placeholder }, ref) => {
       value={value}
       ref={ref}
       onChange={onChange}
-      placeholder={placeholder}
+      placeholder="Put the number"
     />
   );
 });

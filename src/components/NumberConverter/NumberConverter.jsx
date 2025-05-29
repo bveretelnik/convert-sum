@@ -1,11 +1,10 @@
 import React, { useRef, useState } from 'react';
 import styles from './NumberConverter.module.scss';
 import CopyToClipboard from '../CopyToClipboard/CopyToClipboard.jsx';
-import ClearButton from '../Button/ClearButton.jsx';
 import { EP, VZ } from '../../constants/taxConstants.js';
 import replaceChar from '../../heplers/replaceChar.js';
-import Input from '../Input/Input.jsx';
 import CalculatedSum from '../CalculatedSum/CalculatedSum.jsx';
+import ControlledInputBlock from './ControlledInputBlock.jsx';
 
 const NumberConverter = () => {
   const inputRef = useRef(null);
@@ -15,46 +14,34 @@ const NumberConverter = () => {
 
   const number =
     parseFloat(input.replace(',', '.').replace(' ', '')) *
-    (parseFloat(inputCur.replace(',', '.')) || 1);
+      (parseFloat(inputCur.replace(',', '.')) || 1) || 0;
 
   const epTax = replaceChar(number * EP);
   const militaryTax = replaceChar(number * VZ);
 
   return (
     <div className={styles.convectorContainer}>
-      <h1>Конвертер числа</h1>
+      <div className={styles.convectorTitle}>Конвертер числа</div>
       <div className={styles.convectorWrapper}>
         <div className={styles.convectorInputWrapper}>
-          <div>
-            <Input
-              value={input}
-              ref={inputRef}
-              onChange={e => setInput(e.target.value)}
-              placeholder={'Введіть число, наприклад: 3 288.50'}
-            />
-            <ClearButton
-              onClick={() => {
-                setInput('');
-                inputRef.current.focus();
-              }}
-            />
-          </div>
-          <div>
-            <Input
-              value={inputCur}
-              ref={inputCurRef}
-              onChange={e => {
-                setInputCur(e.target.value);
-              }}
-              placeholder={'Введіть суму у валюті'}
-            />
-            <ClearButton
-              onClick={() => {
-                setInputCur('');
-                inputCurRef.current.focus();
-              }}
-            />
-          </div>
+          <ControlledInputBlock
+            value={input}
+            ref={inputRef}
+            onChange={e => setInput(e.target.value)}
+            onClick={() => {
+              setInput('');
+              inputRef.current.focus();
+            }}
+          />
+          <ControlledInputBlock
+            value={inputCur}
+            ref={inputCurRef}
+            onChange={e => setInputCur(e.target.value)}
+            onClick={() => {
+              setInputCur('');
+              inputCurRef.current.focus();
+            }}
+          />
         </div>
         <div>
           <p className={styles.title}>

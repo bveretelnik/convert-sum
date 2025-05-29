@@ -15,7 +15,7 @@ const CopyToClipboard = ({ value, label }) => {
         >
           {value}
         </div>
-        {copied && <div className={styles.clipboardSuccess}>✅</div>}
+        {copied && <div className={styles.clipboardSuccess}>+</div>}
       </div>
     </div>
   );

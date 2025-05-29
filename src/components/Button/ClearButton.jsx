@@ -1,9 +1,9 @@
 import React from 'react';
-import './ClearButton.css';
+import styles from './ClearButton.module.scss';
 
 const ClearButton = ({ onClick }) => {
   return (
-    <button className="clearButton" onClick={onClick}>
+    <button className={styles.clearButton} onClick={onClick}>
       Clear
     </button>
   );
