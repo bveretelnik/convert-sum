@@ -5,6 +5,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  gap: 24px;
 }
 
 .convectorContainer input {
@@ -24,10 +25,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-
-.convectorInput {
-  padding: 8px;
 }
 
 .title {

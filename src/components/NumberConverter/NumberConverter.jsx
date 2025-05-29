@@ -4,6 +4,8 @@ import CopyToClipboard from '../CopyToClipboard/CopyToClipboard.jsx';
 import ClearButton from '../Button/ClearButton.jsx';
 import { EP, VZ } from '../../constants/taxConstants.js';
 import replaceChar from '../../heplers/replaceChar.js';
+import Input from '../Input/Input.jsx';
+import CalculatedSum from '../CalculatedSum/CalculatedSum.jsx';
 
 const NumberConverter = () => {
   const inputRef = useRef(null);
@@ -24,13 +26,11 @@ const NumberConverter = () => {
       <div className={styles.convectorWrapper}>
         <div className={styles.convectorInputWrapper}>
           <div>
-            <input
-              className={styles.convectorInput}
-              type="text"
+            <Input
               value={input}
               ref={inputRef}
               onChange={e => setInput(e.target.value)}
-              placeholder="Введіть число, наприклад: 3 288.50"
+              placeholder={'Введіть число, наприклад: 3 288.50'}
             />
             <ClearButton
               onClick={() => {
@@ -40,15 +40,13 @@ const NumberConverter = () => {
             />
           </div>
           <div>
-            <input
-              className={styles.convectorInput}
-              type="text"
+            <Input
               value={inputCur}
               ref={inputCurRef}
               onChange={e => {
                 setInputCur(e.target.value);
               }}
-              placeholder="Введіть суму у валюті"
+              placeholder={'Введіть суму у валюті'}
             />
             <ClearButton
               onClick={() => {
@@ -67,6 +65,7 @@ const NumberConverter = () => {
           <CopyToClipboard value={militaryTax || 0} label={'ВЗ:'} />
         </div>
       </div>
+      <CalculatedSum />
     </div>
   );
 };
