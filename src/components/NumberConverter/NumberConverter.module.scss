@@ -1,9 +1,15 @@
+.convectorWrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
 .convectorContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 24px;
-  margin: 40px 80px 40px;
 }
 
 .convectorTitle {
@@ -12,7 +18,7 @@
   font-weight: 600;
 }
 
-.convectorWrapper {
+.taxWrapper {
   width: fit-content;
   display: flex;
   gap: 48px;

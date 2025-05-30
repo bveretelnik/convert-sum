@@ -21,37 +21,39 @@ const NumberConverter = () => {
   const militaryTax = replaceChar(number * VZ);
 
   return (
-    <div className={styles.convectorContainer}>
-      <div className={styles.convectorTitle}>Конвертер числа</div>
-      <div className={styles.convectorWrapper}>
-        <div className={styles.convectorInputWrapper}>
-          <ControlledInputBlock
-            value={input}
-            ref={inputRef}
-            onChange={e => setInput(e.target.value)}
-            onClick={() => {
-              setInput('');
-              inputRef.current.focus();
-            }}
-          />
-          <ControlledInputBlock
-            value={inputCur}
-            ref={inputCurRef}
-            onChange={e => setInputCur(e.target.value)}
-            onClick={() => {
-              setInputCur('');
-              inputCurRef.current.focus();
-            }}
-          />
+    <div className={styles.convectorWrapper}>
+      <div className={styles.convectorContainer}>
+        <div className={styles.convectorTitle}>Конвертер числа</div>
+        <div className={styles.taxWrapper}>
+          <div className={styles.convectorInputWrapper}>
+            <ControlledInputBlock
+              value={input}
+              ref={inputRef}
+              onChange={e => setInput(e.target.value)}
+              onClick={() => {
+                setInput('');
+                inputRef.current.focus();
+              }}
+            />
+            <ControlledInputBlock
+              value={inputCur}
+              ref={inputCurRef}
+              onChange={e => setInputCur(e.target.value)}
+              onClick={() => {
+                setInputCur('');
+                inputCurRef.current.focus();
+              }}
+            />
+          </div>
+          <div>
+            <SubTitle />
+            <CopyToClipboard value={replaceChar(number)} label={'SUM:'} />
+            <CopyToClipboard value={epTax || 0} label={'ЄП:'} />
+            <CopyToClipboard value={militaryTax || 0} label={'ВЗ:'} />
+          </div>
         </div>
-        <div>
-          <SubTitle />
-          <CopyToClipboard value={replaceChar(number)} label={'SUM:'} />
-          <CopyToClipboard value={epTax || 0} label={'ЄП:'} />
-          <CopyToClipboard value={militaryTax || 0} label={'ВЗ:'} />
-        </div>
+        <CalculatedSum />
       </div>
-      <CalculatedSum />
     </div>
   );
 };
