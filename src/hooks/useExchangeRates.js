@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 
-const API_URL =
-  'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json';
+export default function useExchangeRates(date) {
+  const formattedDate = date ? date.replaceAll('-', '') : '';
+  const API_URL = formattedDate
+    ? `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=${formattedDate}&json`
+    : `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`;
 
-export default function useExchangeRates() {
   return useQuery({
-    queryKey: ['exchangeRates'],
+    queryKey: ['exchangeRates', date],
     queryFn: async () => {
       const response = await fetch(API_URL);
       if (!response.ok) {
