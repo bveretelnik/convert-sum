@@ -1,0 +1,27 @@
+.exchangeContainer {
+  margin-left: 50px;
+  font-size: 1rem;
+}
+
+.exchangeUpdateTime {
+  font-size: 0.9rem;
+  color: #5ad7c3;
+}
+
+.exchangeRate {
+  font-size: 1.2rem;
+  color: chartreuse;
+  cursor: pointer;
+}
+
+.exchangeDateInputLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.exchangeDateInput {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
