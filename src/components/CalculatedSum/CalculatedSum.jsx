@@ -32,7 +32,7 @@ const CalculatedSum = () => {
         <CopyToClipboard
           value={replaceChar(
             values.reduce(
-              (acc, cur) => acc + parseNumber(cur.replace(' ', '')),
+              (acc, cur) => acc + parseNumber(cur.replaceAll(' ', '')),
               0,
             ),
           )}

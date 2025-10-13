@@ -6,6 +6,7 @@ import replaceChar from '../../heplers/replaceChar.js';
 import CalculatedSum from '../CalculatedSum/CalculatedSum.jsx';
 import ControlledInputBlock from './ControlledInputBlock/ControlledInputBlock.jsx';
 import SubTitle from './SubTitle/SubTitle.jsx';
+import { getValidValues } from '../../heplers/getValidValues.js';
 
 const NumberConverter = () => {
   const inputRef = useRef(null);
@@ -13,17 +14,11 @@ const NumberConverter = () => {
   const [input, setInput] = useState('');
   const [inputCur, setInputCur] = useState('');
 
-  const number =
-    parseFloat(input.replace(',', '.').replace(' ', '')) *
-      (parseFloat(inputCur.replace(',', '.')) || 1) || 0;
-
-  const epTax = replaceChar(number * EP);
-  const militaryTax = replaceChar(number * VZ);
+  const { number, epTax, militaryTax } = getValidValues(input, inputCur);
 
   return (
     <div className={styles.convectorWrapper}>
       <div className={styles.convectorContainer}>
-        <div className={styles.convectorTitle}>Конвертер числа</div>
         <div className={styles.taxWrapper}>
           <div className={styles.convectorInputWrapper}>
             <ControlledInputBlock
