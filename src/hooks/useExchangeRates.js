@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
+import { DEFAULT_STALE_TIME, NBU_API_BASE } from '../config.js';
 
 export default function useExchangeRates(date) {
   const formattedDate = date ? date.replaceAll('-', '') : '';
   const API_URL = formattedDate
-    ? `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=${formattedDate}&json`
-    : `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`;
+    ? `${NBU_API_BASE}?date=${formattedDate}&json`
+    : `${NBU_API_BASE}?json`;
 
   return useQuery({
     queryKey: ['exchangeRates', date],
@@ -15,6 +16,6 @@ export default function useExchangeRates(date) {
       }
       return await response.json();
     },
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: DEFAULT_STALE_TIME,
   });
 }
