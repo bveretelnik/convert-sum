@@ -7,6 +7,8 @@ import Loading from './Loading.jsx';
 import Error from './Error.jsx';
 import ExchangeList from './ExchangeList.jsx';
 import ExchangeDate from './ExchangeDate.jsx';
+import Card from '../Card/Card.jsx';
+import SubTitle from '../NumberConverter/SubTitle/SubTitle.jsx';
 
 const Exchange = () => {
   const [date, setDate] = useState(''); // вибрана дата
@@ -18,14 +20,16 @@ const Exchange = () => {
   const importantData = data.filter(item => ['USD', 'EUR'].includes(item.cc));
 
   return (
-    <div className={styles.exchangeContainer}>
-      <h2>💰 Курс валют НБУ</h2>
-      <ExchangeDate date={date} setDate={setDate} />
-      <ExchangeList items={importantData} />
-      <p className={styles.exchangeUpdateTime}>
-        Оновлено: {importantData[0]?.exchangedate}
-      </p>
-    </div>
+    <Card>
+      <div className={styles.exchangeContainer}>
+        <SubTitle value={'💰 Курс валют НБУ'} />
+        <ExchangeDate date={date} setDate={setDate} />
+        <ExchangeList items={importantData} />
+        <p className={styles.exchangeUpdateTime}>
+          Оновлено: {importantData[0]?.exchangedate}
+        </p>
+      </div>
+    </Card>
   );
 };
 

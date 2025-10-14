@@ -9,12 +9,6 @@ const ExchangeDate = ({ date, setDate }) => (
       value={date}
       className={styles.exchangeDateInput}
       onChange={e => setDate(e.target.value)}
-      style={{
-        marginLeft: '0.5rem',
-        padding: '0.3rem 0.5rem',
-        borderRadius: '6px',
-        border: '1px solid #ccc',
-      }}
     />
   </label>
 );

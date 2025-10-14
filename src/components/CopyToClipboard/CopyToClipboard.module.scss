@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .clipboardContainer {
     display: flex;
     gap: 16px;
@@ -11,7 +13,7 @@
 
 .clipboardValue {
     cursor: pointer;
-    color: #2f80ed;
+    color: $color-primary;
     font-size: 26px;
 }
 

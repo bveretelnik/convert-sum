@@ -1,5 +1,7 @@
+@import "../../styles/variables";
+
 .clearButton {
-  background: #2f80ed;
+  background: $color-primary;
   color: #fff;
   border: none;
   border-radius: 10px;

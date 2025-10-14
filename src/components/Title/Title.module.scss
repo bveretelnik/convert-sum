@@ -1,6 +1,9 @@
+@import "../../styles/variables";
+
 .convectorTitle {
   font-size: 32px;
   font-weight: 700;
   text-align: center;
-  color: #2f80ed;
+  margin-bottom: 24px;
+  color: $color-primary;
 }

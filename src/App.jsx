@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Title />
-      {/*<Exchange />*/}
+      <Exchange />
       <NumberConverter />
       <Footer />
     </>

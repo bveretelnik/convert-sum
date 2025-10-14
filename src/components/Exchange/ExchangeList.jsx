@@ -1,21 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Exchange.module.scss';
 import copyTextToClipboard from '../../heplers/copyTextToClipboard.js';
+import { clsx } from 'clsx';
+import ExchangeItem from './ExchangeItem.jsx';
 
 const ExchangeList = ({ items }) => {
   return (
-    <ul>
+    <ul className={styles.exchangeList}>
       {items.map(r => (
-        <li key={r.cc}>
-          {r.txt} ({r.cc}):{' '}
-          <strong
-            className={styles.exchangeRate}
-            onClick={() => copyTextToClipboard(r.rate)}
-          >
-            {r.rate}
-          </strong>{' '}
-          грн
-        </li>
+        <ExchangeItem value={r.rate} name={r.cc} />
       ))}
     </ul>
   );

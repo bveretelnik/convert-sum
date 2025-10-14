@@ -1,29 +1,41 @@
+@import "../../styles/variables";
 .exchangeContainer {
-  margin-left: 50px;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .exchangeUpdateTime {
   font-size: 0.9rem;
-  color: #5ad7c3;
+  color: $text-secondary;
+}
+
+.exchangeList {
+  font-size: 1.5rem;
+  list-style-type: none;
+  padding: 0;
+  color: $text-secondary;
 }
 
 .exchangeRate {
-  font-size: 1.2rem;
-  color: chartreuse;
+  color: $color-primary;
   cursor: pointer;
+}
+
+.exchangeRateCopied {
+  color: $color-primary-hover;
 }
 
 .exchangeDateInputLabel {
   display: block;
   margin-bottom: 0.5rem;
+  color: $text-secondary;
 }
 
 .exchangeDateInput {
-  margin-left: 0.5rem;
+  margin-left: 8px;
+  font-size: 0.9rem;
   padding: 0.3rem 0.5rem;
   border: 1px solid transparent;
   background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
   linear-gradient(90deg, #2f80ed, #56ccf2) border-box;
-  border-radius: 12px;
+  border-radius: 10px;
 }
