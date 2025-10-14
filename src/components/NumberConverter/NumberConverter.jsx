@@ -19,7 +19,7 @@ const NumberConverter = () => {
   return (
     <div className={styles.container}>
       <Card>
-        <SubTitle value={'Tax calculator'} />
+        <SubTitle value={'💳 Tax calculator'} />
         <div className={styles.convectorInputWrapper}>
           <ControlledInputBlock
             value={input}

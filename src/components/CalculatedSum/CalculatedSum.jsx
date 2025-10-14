@@ -21,7 +21,7 @@ const CalculatedSum = () => {
 
   return (
     <div className={styles.calculateContainer}>
-      <SubTitle value={'Total Sum'} />
+      <SubTitle value={'🏦 Total Sum'} />
       <div className={styles.calculateWrapper}>
         <Input
           value={values[0]}

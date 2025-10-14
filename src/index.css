@@ -18,3 +18,9 @@
     min-height: 100vh;
     padding: 2rem;
 }
+
+.exchange-container {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+}

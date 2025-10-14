@@ -6,7 +6,7 @@ import copyTextToClipboard from '../../heplers/copyTextToClipboard.js';
 const ExchangeItem = ({ name, value }) => {
   const [copied, setCopied] = useState(false);
   return (
-    <li key={name}>
+    <li>
       {name}:{' '}
       <strong
         className={clsx(styles.exchangeRate, {

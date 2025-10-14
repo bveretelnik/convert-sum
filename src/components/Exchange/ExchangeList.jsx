@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Exchange.module.scss';
-import copyTextToClipboard from '../../heplers/copyTextToClipboard.js';
 import { clsx } from 'clsx';
 import ExchangeItem from './ExchangeItem.jsx';
 
@@ -8,7 +7,7 @@ const ExchangeList = ({ items }) => {
   return (
     <ul className={styles.exchangeList}>
       {items.map(r => (
-        <ExchangeItem value={r.rate} name={r.cc} />
+        <ExchangeItem key={r.cc} value={r.rate} name={r.cc} />
       ))}
     </ul>
   );
