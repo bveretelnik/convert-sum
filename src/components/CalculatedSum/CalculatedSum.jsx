@@ -36,6 +36,7 @@ const CalculatedSum = () => {
         <ClearButton onClick={() => setValue(initialInputsValue)} />
       </div>
       <div className={styles.calculatedBtn}>
+        <SubTitle value={'Result sum'} />
         <CopyToClipboard
           value={replaceChar(
             values.reduce(

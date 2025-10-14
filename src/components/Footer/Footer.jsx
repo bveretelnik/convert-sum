@@ -4,7 +4,7 @@ import styles from './Footer.module.scss';
 const Footer = () => (
   <div className={styles.footer}>
     <p>
-      This is a simple currency converter. convert from one currency to another.
+      This is a simple currency converter. Convert from one currency to another.
     </p>
     <p>
       Develop by <strong>b_veretelnyk</strong> in <strong>2025</strong>.

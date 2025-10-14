@@ -41,7 +41,7 @@ const NumberConverter = () => {
           />
         </div>
         <div className={styles.convectorResultWrapper}>
-          <SubTitle value={'Result'} />
+          <SubTitle value={'Result taxes'} />
           <CopyToClipboard value={replaceChar(number)} label={'SUM:'} />
           <CopyToClipboard value={epTax || 0} label={'EP:'} />
           <CopyToClipboard value={militaryTax || 0} label={'VZ:'} />
