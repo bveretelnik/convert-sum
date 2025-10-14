@@ -5,6 +5,7 @@ import replaceChar from '../../heplers/replaceChar.js';
 import { parseNumber } from '../../heplers/parseNumber.js';
 import styles from './CalculatedSum.module.scss';
 import ClearButton from '../Button/ClearButton.jsx';
+import SubTitle from '../NumberConverter/SubTitle/SubTitle.jsx';
 
 const initialInputsValue = ['', ''];
 const CalculatedSum = () => {
@@ -19,7 +20,8 @@ const CalculatedSum = () => {
   };
 
   return (
-    <div>
+    <div className={styles.calculateContainer}>
+      <SubTitle value={'Total Sum'} />
       <div className={styles.calculateWrapper}>
         <Input
           value={values[0]}
@@ -29,6 +31,11 @@ const CalculatedSum = () => {
           value={values[1]}
           onChange={e => handleChange(1, e.target.value)}
         />
+      </div>
+      <div>
+        <ClearButton onClick={() => setValue(initialInputsValue)} />
+      </div>
+      <div className={styles.calculatedBtn}>
         <CopyToClipboard
           value={replaceChar(
             values.reduce(
@@ -38,9 +45,6 @@ const CalculatedSum = () => {
           )}
           label={'SUM:'}
         />
-      </div>
-      <div className={styles.calculatedBtn}>
-        <ClearButton onClick={() => setValue(initialInputsValue)} />
       </div>
     </div>
   );

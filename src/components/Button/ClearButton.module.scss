@@ -1,11 +1,19 @@
 .clearButton {
-    margin-left: 20px;
-    width: 100px;
-    height: 42px;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    font-size: 20px;
-    border: none;
-    border-radius: 6px;
-    padding: 0;
+  background: #2f80ed;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #56ccf2;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
