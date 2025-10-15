@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './ClearButton.module.scss';
+import styles from './Button.module.scss';
 
-const ClearButton = ({ onClick }) => {
+const Button = ({ onClick, name }) => {
   return (
     <button className={styles.clearButton} onClick={onClick}>
       Clear
@@ -9,4 +9,4 @@ const ClearButton = ({ onClick }) => {
   );
 };
 
-export default ClearButton;
+export default Button;

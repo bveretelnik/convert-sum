@@ -4,7 +4,7 @@ import CopyToClipboard from '../CopyToClipboard/CopyToClipboard.jsx';
 import replaceChar from '../../heplers/replaceChar.js';
 import { parseNumber } from '../../heplers/parseNumber.js';
 import styles from './CalculatedSum.module.scss';
-import ClearButton from '../Button/ClearButton.jsx';
+import Button from '../Button/Button.jsx';
 import SubTitle from '../NumberConverter/SubTitle/SubTitle.jsx';
 
 const initialInputsValue = ['', ''];
@@ -33,7 +33,7 @@ const CalculatedSum = () => {
         />
       </div>
       <div>
-        <ClearButton onClick={() => setValue(initialInputsValue)} />
+        <Button onClick={() => setValue(initialInputsValue)} name={'Clear'} />
       </div>
       <div className={styles.calculatedBtn}>
         <SubTitle value={'Result sum'} />
