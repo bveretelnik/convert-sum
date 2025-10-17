@@ -5,6 +5,7 @@ import Title from './components/Title/Title.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import TaxInfo from './components/TaxInfo/TaxInfo.jsx';
 import VisibilityWrapper from './components/VisibilityWrapper/VisibilityWrapper.jsx';
+import ExchangeCurrency from './components/ExchangeCurrency/ExchangeCurrency.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </div>
       </VisibilityWrapper>
       <NumberConverter />
+      <ExchangeCurrency />
       <Footer />
     </>
   );

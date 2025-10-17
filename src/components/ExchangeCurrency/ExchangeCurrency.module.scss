@@ -1,0 +1,21 @@
+.exchangeCurrencyCard {
+  width: 100%;
+}
+
+.exchangeCurrencyInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exchangeCurrencyResultWrapper {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid transparent;
+  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
+  linear-gradient(90deg, #2f80ed, #56ccf2) border-box;
+  border-radius: 12px;
+  padding: 24px;
+}
