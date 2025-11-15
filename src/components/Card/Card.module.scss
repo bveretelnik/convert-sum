@@ -8,4 +8,8 @@
   padding: 24px;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 1);
   width: 300px;
+
+  @media (min-width: 992px) {
+    width: 300px;
+  }
 }

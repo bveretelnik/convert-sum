@@ -1,9 +1,13 @@
 .container {
   display: flex;
-  //flex-direction: row;
+  flex-direction: column;
   gap: 48px;
   padding: 24px;
   margin-top: 24px;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
 }
 .convectorWrapper {
   display: flex;
