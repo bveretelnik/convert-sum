@@ -1,0 +1,10 @@
+.checkboxToggle {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+
+  &>input {
+    width: 20px;
+    height: 20px;
+  }
+}

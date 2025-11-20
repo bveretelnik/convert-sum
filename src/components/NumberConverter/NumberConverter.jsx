@@ -7,19 +7,26 @@ import ControlledInputBlock from './ControlledInputBlock/ControlledInputBlock.js
 import SubTitle from './SubTitle/SubTitle.jsx';
 import { getValidValues } from '../../heplers/getValidValues.js';
 import Card from '../Card/Card.jsx';
+import CheckboxToggle from '../CheckboxToggle/CheckboxToggle.jsx';
 
 const NumberConverter = () => {
   const inputRef = useRef(null);
   const inputCurRef = useRef(null);
   const [input, setInput] = useState('');
   const [inputCur, setInputCur] = useState('');
+  const [checked, setChecked] = useState(false);
 
-  const { number, epTax, militaryTax } = getValidValues(input, inputCur);
+  const { number, epTax, militaryTax } = getValidValues(
+    input,
+    inputCur,
+    checked,
+  );
 
   return (
     <div className={styles.container}>
       <Card>
         <SubTitle value={'💳 Tax calculator'} />
+        <CheckboxToggle checked={checked} setChecked={setChecked} />
         <div className={styles.convectorInputWrapper}>
           <ControlledInputBlock
             value={input}

@@ -6,13 +6,14 @@ const FEE = 2.2;
 const parseNumber = value =>
   parseFloat(value.replace(',', '.').replaceAll(' ', ''));
 
-export const getValidValues = (value, valueVur) => {
+export const getValidValues = (value, valueVur, checked) => {
   const number = parseNumber(value) * (parseNumber(valueVur) || 1) || 0;
 
   const exchangeRate = parseNumber(value) / (parseNumber(valueVur) || 1) || 0;
+  const feeNumber = checked ? FEE : 0;
 
-  const epTax = replaceChar(number * EP + FEE);
-  const militaryTax = replaceChar(number * VZ + FEE);
+  const epTax = replaceChar(number * EP + feeNumber);
+  const militaryTax = replaceChar(number * VZ + feeNumber);
 
   return { number, epTax, militaryTax, exchangeRate };
 };
