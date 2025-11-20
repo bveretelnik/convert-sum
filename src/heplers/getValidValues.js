@@ -1,7 +1,7 @@
 import replaceChar from './replaceChar.js';
 import { EP, VZ } from '../constants/taxConstants.js';
 
-const FEE = 2.2;
+const FEE = 1;
 
 const parseNumber = value =>
   parseFloat(value.replace(',', '.').replaceAll(' ', ''));
