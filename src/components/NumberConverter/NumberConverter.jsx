@@ -52,7 +52,7 @@ const NumberConverter = () => {
           <CopyToClipboard value={replaceChar(number)} label={'SUM:'} />
           <CopyToClipboard value={epTax || 0} label={'EP:'} />
           <CopyToClipboard value={militaryTax || 0} label={'VZ:'} />
-          <CopyToClipboard value={'1902.34'} label={'ESW (fix sum):'} />
+          <CopyToClipboard value={'1902,34'} label={'ESW (fix sum):'} />
         </div>
       </Card>
       <Card>
