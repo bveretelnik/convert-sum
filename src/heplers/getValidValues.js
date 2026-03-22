@@ -12,8 +12,8 @@ export const getValidValues = (value, valueVur, checked) => {
   const exchangeRate = parseNumber(value) / (parseNumber(valueVur) || 1) || 0;
   const feeNumber = checked ? FEE : 0;
 
-  const epTax = replaceChar(number * EP + feeNumber);
-  const militaryTax = replaceChar(number * VZ + feeNumber);
+  const epTax = replaceChar(number * EP + feeNumber) || 0;
+  const militaryTax = replaceChar(number * VZ + feeNumber) || 0;
 
   return { number, epTax, militaryTax, exchangeRate };
 };

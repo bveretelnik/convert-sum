@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useId, useRef, useState } from 'react';
 import styles from './NumberConverter.module.scss';
 import CopyToClipboard from '../CopyToClipboard/CopyToClipboard.jsx';
 import replaceChar from '../../heplers/replaceChar.js';
@@ -8,6 +8,7 @@ import SubTitle from './SubTitle/SubTitle.jsx';
 import { getValidValues } from '../../heplers/getValidValues.js';
 import Card from '../Card/Card.jsx';
 import CheckboxToggle from '../CheckboxToggle/CheckboxToggle.jsx';
+import { ESV, ESV_QUARTAL } from '../../config.js';
 
 const NumberConverter = () => {
   const inputRef = useRef(null);
@@ -15,12 +16,21 @@ const NumberConverter = () => {
   const [input, setInput] = useState('');
   const [inputCur, setInputCur] = useState('');
   const [checked, setChecked] = useState(false);
+  const id = useId();
 
   const { number, epTax, militaryTax } = getValidValues(
     input,
     inputCur,
     checked,
   );
+
+  const copyToClickValues = [
+    { value: replaceChar(number), label: 'SUM:' },
+    { value: epTax, label: 'EP:' },
+    { value: militaryTax, label: 'VZ:' },
+    { value: ESV, label: 'ESV:' },
+    { value: ESV_QUARTAL, label: 'ESV Quartal:' },
+  ];
 
   return (
     <div className={styles.container}>
@@ -49,10 +59,13 @@ const NumberConverter = () => {
         </div>
         <div className={styles.convectorResultWrapper}>
           <SubTitle value={'Result taxes'} />
-          <CopyToClipboard value={replaceChar(number)} label={'SUM:'} />
-          <CopyToClipboard value={epTax || 0} label={'EP:'} />
-          <CopyToClipboard value={militaryTax || 0} label={'VZ:'} />
-          <CopyToClipboard value={'1902,34'} label={'ESW (fix sum):'} />
+          {copyToClickValues.map(({ key, value, label }, index) => (
+            <CopyToClipboard
+              key={`${index}-${id}`}
+              value={value}
+              label={label}
+            />
+          ))}
         </div>
       </Card>
       <Card>
