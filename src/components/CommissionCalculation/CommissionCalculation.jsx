@@ -13,19 +13,21 @@ const commissionPills = [
 
 const CommissionCalculation = () => {
   const [value, setValue] = useState('');
-  const [activePilValue, setActivePilValue] = useState(
-    commissionPills[0].commission,
-  );
+  const [activePill, setActivePill] = useState(commissionPills[0]);
 
-  const handlePillClick = commission => {
-    setActivePilValue(commission);
+  const handlePillClick = pill => {
+    setActivePill(pill);
   };
 
-  const totalSum = value * activePilValue;
+  const totalSum = value * activePill.commission;
 
   return (
     <Card>
-      <Pills pills={commissionPills} onClick={handlePillClick} />
+      <Pills
+        pills={commissionPills}
+        onClick={handlePillClick}
+        activePilsId={activePill.id}
+      />
       <div>
         <ControlledInputBlock
           value={value}
