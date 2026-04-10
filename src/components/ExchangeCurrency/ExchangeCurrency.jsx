@@ -12,8 +12,9 @@ const ExchangeCurrency = () => {
   const [value, setValue] = useState('');
   const [currency, setCurrency] = useState('');
   const { exchangeRate } = getValidValues(value, currency);
+
   return (
-    <Card classNames={styles.exchangeCurrencyCard}>
+    <Card>
       <div className={styles.exchangeCurrencyInputs}>
         <ControlledInputBlock
           value={value}
@@ -46,7 +47,7 @@ const ExchangeCurrency = () => {
       </div>
       <div className={styles.exchangeCurrencyResultWrapper}>
         <SubTitle value={'Result Exchange'} />
-        <CopyToClipboard value={replaceChar(exchangeRate)} label={'Value:'} />
+        <CopyToClipboard value={replaceChar(exchangeRate)} />
       </div>
     </Card>
   );

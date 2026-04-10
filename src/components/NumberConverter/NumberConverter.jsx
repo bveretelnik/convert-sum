@@ -9,6 +9,7 @@ import { getValidValues } from '../../heplers/getValidValues.js';
 import Card from '../Card/Card.jsx';
 import CheckboxToggle from '../CheckboxToggle/CheckboxToggle.jsx';
 import { ESV, ESV_QUARTAL } from '../../config.js';
+import Container from '../Container/Container.jsx';
 
 const NumberConverter = () => {
   const inputRef = useRef(null);
@@ -33,7 +34,7 @@ const NumberConverter = () => {
   ];
 
   return (
-    <div className={styles.container}>
+    <Container>
       <Card>
         <SubTitle value={'💳 Tax calculator'} />
         <CheckboxToggle checked={checked} setChecked={setChecked} />
@@ -71,7 +72,7 @@ const NumberConverter = () => {
       <Card>
         <CalculatedSum />
       </Card>
-    </div>
+    </Container>
   );
 };
 

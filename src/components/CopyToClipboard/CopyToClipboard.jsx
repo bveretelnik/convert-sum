@@ -3,7 +3,7 @@ import copyTextToClipboard from '../../heplers/copyTextToClipboard.js';
 import styles from './CopyToClipboard.module.scss';
 import { clsx } from 'clsx';
 
-const CopyToClipboard = ({ value, label }) => {
+const CopyToClipboard = ({ value, label = 'Value:' }) => {
   const [copied, setCopied] = useState(false);
 
   return (
