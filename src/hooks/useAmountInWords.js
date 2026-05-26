@@ -21,9 +21,7 @@ function getThousandsWord(n) {
   return 'тисяч';
 }
 
-function convertBelowThousand(n, isFemale = false) {
-  const u = isFemale ? unitsFemale : unitsMale;
-
+function convertBelowThousand(n) {
   const h = Math.floor(n / 100);
   const t = Math.floor((n % 100) / 10);
   const o = n % 10;
@@ -35,7 +33,7 @@ function convertBelowThousand(n, isFemale = false) {
   if (t === 1) {
     words += teens[o] + ' ';
   } else {
-    words += (tens[t] + ' ' + u[o]).trim() + ' ';
+    words += (tens[t] + ' ' + unitsFemale[o]).trim() + ' ';
   }
 
   return words.trim();
