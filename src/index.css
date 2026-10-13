@@ -1,13 +1,70 @@
 :root {
   font-size: 16px;
-  color: #edf4ff;
-  background: #07111f;
+  color-scheme: dark;
+  --page-base: #07111f;
+  --page-glow-blue: rgba(62, 127, 255, 0.22);
+  --page-glow-green: rgba(28, 211, 184, 0.12);
+  --text-main: #edf4ff;
+  --text-heading: #f1f6ff;
+  --text-muted: #9fb1c9;
+  --surface-card: #0f1f34;
+  --surface-card-highlight: #172f4c;
+  --surface-control: #04101f;
+  --surface-control-active: #061524;
+  --surface-panel: #041121;
+  --surface-section: #051323;
+  --border: rgba(174, 204, 255, 0.15);
+  --border-strong: rgba(112, 166, 255, 0.3);
+  --primary: #70a6ff;
+  --primary-light: #a8d5ff;
+  --accent: #54ddc8;
+  --button-ink: #061323;
+  --button-start: #78aaff;
+  --button-end: #75d9e5;
+  --button-start-hover: #9abfff;
+  --button-end-hover: #8ae8ef;
+  --placeholder: #71859f;
+  --shadow: rgba(0, 6, 18, 0.32);
+  --hover-shadow: rgba(0, 6, 18, 0.42);
+  --focus-ring: rgba(112, 166, 255, 0.16);
+  color: var(--text-main);
+  background: var(--page-base);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page-base: #edf4fb;
+  --page-glow-blue: rgba(86, 149, 255, 0.22);
+  --page-glow-green: rgba(39, 188, 163, 0.15);
+  --text-main: #14233a;
+  --text-heading: #10223e;
+  --text-muted: #5a6c85;
+  --surface-card: #ffffff;
+  --surface-card-highlight: #f7faff;
+  --surface-control: #f5f8fc;
+  --surface-control-active: #ffffff;
+  --surface-panel: #eef5fc;
+  --surface-section: #e6f0fa;
+  --border: rgba(45, 90, 148, 0.18);
+  --border-strong: rgba(53, 108, 210, 0.34);
+  --primary: #356cd2;
+  --primary-light: #2456ad;
+  --accent: #087f6d;
+  --button-ink: #ffffff;
+  --button-start: #396fd5;
+  --button-end: #168f9e;
+  --button-start-hover: #2d62c5;
+  --button-end-hover: #117f8e;
+  --placeholder: #72819a;
+  --shadow: rgba(31, 68, 112, 0.12);
+  --hover-shadow: rgba(31, 68, 112, 0.18);
+  --focus-ring: rgba(53, 108, 210, 0.16);
 }
 
 @media (min-width: 701px) {
@@ -25,9 +82,10 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 15% 0%, rgba(62, 127, 255, 0.22), transparent 34rem),
-    radial-gradient(circle at 95% 30%, rgba(28, 211, 184, 0.12), transparent 24rem),
-    #07111f;
+    radial-gradient(circle at 15% 0%, var(--page-glow-blue), transparent 34rem),
+    radial-gradient(circle at 95% 30%, var(--page-glow-green), transparent 24rem),
+    var(--page-base);
+  transition: background 0.35s ease, color 0.25s ease;
 }
 
 button,
@@ -58,6 +116,7 @@ button {
 }
 
 header {
+  position: relative;
   max-width: 680px;
   margin: 0 auto 10px;
   text-align: center;
@@ -65,7 +124,7 @@ header {
 
 .appEyebrow {
   margin: 0 0 10px;
-  color: #78dccc;
+  color: var(--accent);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -74,7 +133,7 @@ header {
 .appIntro {
   max-width: 510px;
   margin: 0 auto;
-  color: #9fb1c9;
+  color: var(--text-muted);
   font-size: 1rem;
 }
 
