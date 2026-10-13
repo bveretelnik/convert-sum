@@ -49,4 +49,18 @@
   border: 1px solid $border;
   border-radius: 8px;
   background: rgba(4, 17, 33, 0.6);
+  color-scheme: dark;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(85%) sepia(30%) saturate(541%) hue-rotate(171deg);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba(112, 166, 255, 0.16);
+  }
 }

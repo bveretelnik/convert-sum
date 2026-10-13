@@ -11,23 +11,26 @@ import Card from '../Card/Card.jsx';
 import SubTitle from '../NumberConverter/SubTitle/SubTitle.jsx';
 
 const Exchange = () => {
-  const [date, setDate] = useState(''); // вибрана дата
+  const [date, setDate] = useState('');
   const { data, isLoading, isError } = useExchangeRates(date);
 
-  if (isLoading) return <Loading />;
-  if (isError) return <Error />;
-
-  const importantData = data.filter(item => ['USD', 'EUR'].includes(item.cc));
+  const importantData = data?.filter(item => ['USD', 'EUR'].includes(item.cc));
 
   return (
     <Card>
       <div className={styles.exchangeContainer}>
         <SubTitle value={'💰 Курс валют НБУ'} />
         <ExchangeDate date={date} setDate={setDate} />
-        <ExchangeList items={importantData} />
-        <p className={styles.exchangeUpdateTime}>
-          Оновлено: {importantData[0]?.exchangedate}
-        </p>
+        {isLoading && <Loading />}
+        {isError && <Error />}
+        {importantData && (
+          <>
+            <ExchangeList items={importantData} />
+            <p className={styles.exchangeUpdateTime}>
+              Оновлено: {importantData[0]?.exchangedate}
+            </p>
+          </>
+        )}
       </div>
     </Card>
   );
