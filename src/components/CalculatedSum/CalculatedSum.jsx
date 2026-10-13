@@ -21,7 +21,7 @@ const CalculatedSum = () => {
 
   return (
     <div className={styles.calculateContainer}>
-      <SubTitle value={'🏦 Total Sum'} />
+      <SubTitle value={'🏦 Загальна сума'} />
       <div className={styles.calculateWrapper}>
         <Input
           value={values[0]}
@@ -33,10 +33,10 @@ const CalculatedSum = () => {
         />
       </div>
       <div>
-        <Button onClick={() => setValue(initialInputsValue)} name={'Clear'} />
+        <Button onClick={() => setValue(initialInputsValue)} name={'Очистити'} />
       </div>
       <div className={styles.calculatedBtn}>
-        <SubTitle value={'Result sum'} />
+        <SubTitle value={'Результат'} />
         <CopyToClipboard
           value={replaceChar(
             values.reduce(
@@ -44,7 +44,7 @@ const CalculatedSum = () => {
               0,
             ),
           )}
-          label={'SUM:'}
+          label={'Сума:'}
         />
       </div>
     </div>

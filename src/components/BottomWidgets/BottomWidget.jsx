@@ -4,7 +4,7 @@ import VisibilityWrapper from '../VisibilityWrapper/VisibilityWrapper.jsx';
 import CommissionCalculation from '../CommissionCalculation/CommissionCalculation.jsx';
 
 const BottomWidget = () => (
-  <VisibilityWrapper title={'bottom widgets'}>
+  <VisibilityWrapper title={'Додаткові калькулятори'}>
     <ExchangeCurrency />
     <CommissionCalculation />
   </VisibilityWrapper>

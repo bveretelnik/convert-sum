@@ -26,17 +26,17 @@ const NumberConverter = () => {
   );
 
   const copyToClickValues = [
-    { value: replaceChar(number), label: 'SUM:' },
-    { value: epTax, label: 'EP:' },
-    { value: militaryTax, label: 'VZ:' },
-    { value: ESV, label: 'ESV:' },
-    { value: ESV_QUARTAL, label: 'ESV Quartal:' },
+    { value: replaceChar(number), label: 'Сума:' },
+    { value: epTax, label: 'ЄП:' },
+    { value: militaryTax, label: 'ВЗ:' },
+    { value: ESV, label: 'ЄСВ:' },
+    { value: ESV_QUARTAL, label: 'ЄСВ / квартал:' },
   ];
 
   return (
     <Container>
       <Card>
-        <SubTitle value={'💳 Tax calculator'} />
+        <SubTitle value={'💳 Податковий калькулятор'} />
         <CheckboxToggle checked={checked} setChecked={setChecked} />
         <div className={styles.convectorInputWrapper}>
           <ControlledInputBlock
@@ -59,7 +59,7 @@ const NumberConverter = () => {
           />
         </div>
         <div className={styles.convectorResultWrapper}>
-          <SubTitle value={'Result taxes'} />
+          <SubTitle value={'Результат розрахунку'} />
           {copyToClickValues.map(({ key, value, label }, index) => (
             <CopyToClipboard
               key={`${index}-${id}`}

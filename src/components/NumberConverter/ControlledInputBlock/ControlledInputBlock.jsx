@@ -8,7 +8,7 @@ const ControlledInputBlock = forwardRef(
     <div className={styles.controllerBlock}>
       {!!header && <span className={styles.header}>{header}</span>}
       <Input value={value} ref={ref} onChange={onChange} />
-      {hasButton && <Button onClick={onClick} name={'Clear'} />}
+      {hasButton && <Button onClick={onClick} name={'Очистити'} />}
     </div>
   ),
 );

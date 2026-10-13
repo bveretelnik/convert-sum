@@ -4,7 +4,7 @@ import TaxInfo from '../TaxInfo/TaxInfo.jsx';
 import VisibilityWrapper from '../VisibilityWrapper/VisibilityWrapper.jsx';
 
 const TopWidgets = () => (
-  <VisibilityWrapper title={'top widgets'}>
+  <VisibilityWrapper title={'Курс НБУ та податкові ставки'}>
     <Exchange />
     <TaxInfo />
   </VisibilityWrapper>

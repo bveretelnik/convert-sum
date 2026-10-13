@@ -8,14 +8,20 @@ import PriceInWords from './components/PriceInWords/PriceInWords.jsx';
 
 function App() {
   return (
-    <>
-      <Title />
+    <main>
+      <header>
+        <p className="appEyebrow">ФІНАНСОВІ ІНСТРУМЕНТИ</p>
+        <Title />
+        <p className="appIntro">
+          Швидкі розрахунки податків, сум та валют — в одному місці.
+        </p>
+      </header>
       <TopWidgets />
       <NumberConverter />
       <PriceInWords />
       <BottomWidget />
       <Footer />
-    </>
+    </main>
   );
 }
 

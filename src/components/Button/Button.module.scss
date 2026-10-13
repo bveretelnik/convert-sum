@@ -1,21 +1,45 @@
 @use "../../styles/variables" as *;
 
-.clearButton {
-  background: $color-primary;
-  color: #fff;
-  border: none;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
   border-radius: 10px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 
-  &:hover {
-    background: #56ccf2;
+  &:focus-visible {
+    outline: 3px solid rgba(112, 166, 255, 0.35);
+    outline-offset: 2px;
   }
 
   &:active {
     transform: scale(0.98);
+  }
+}
+
+.primary {
+  color: #061323;
+  background: linear-gradient(135deg, #78aaff, #75d9e5);
+  box-shadow: 0 8px 20px rgba(70, 141, 249, 0.2);
+
+  &:hover {
+    background: linear-gradient(135deg, #9abfff, #8ae8ef);
+  }
+}
+
+.secondary {
+  color: $color-primary-hover;
+  border-color: $border;
+  background: rgba(16, 40, 68, 0.6);
+
+  &:hover {
+    border-color: rgba(112, 166, 255, 0.55);
+    background: rgba(24, 57, 92, 0.78);
   }
 }

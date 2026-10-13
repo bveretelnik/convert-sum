@@ -1,15 +1,13 @@
+@use "../../styles/variables" as *;
+
 .card {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  align-items: center;
-  background: #1e1e1e;
-  border-radius: 10px;
-  padding: 24px;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 1);
-  width: 300px;
-
-  @media (min-width: 992px) {
-    width: 300px;
-  }
+  min-width: 0;
+  gap: 22px;
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid $border;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(23, 47, 76, 0.96), $color-card);
+  box-shadow: 0 18px 48px $shadow;
 }

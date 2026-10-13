@@ -8,7 +8,7 @@ const CheckboxToggle = ({ checked, setChecked }) => {
         checked={checked}
         onChange={e => setChecked(e.target.checked)}
       />
-      <span>{`${checked ? 'OFF' : 'ON'} add value`}</span>
+      <span>Додати 1 грн до податку</span>
     </label>
   );
 };

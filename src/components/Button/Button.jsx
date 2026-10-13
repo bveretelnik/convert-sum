@@ -1,9 +1,15 @@
 import React from 'react';
 import styles from './Button.module.scss';
+import { clsx } from 'clsx';
 
-const Button = ({ onClick, name }) => {
+const Button = ({ onClick, name, variant = 'primary', ...props }) => {
   return (
-    <button className={styles.clearButton} onClick={onClick}>
+    <button
+      type="button"
+      className={clsx(styles.button, styles[variant])}
+      onClick={onClick}
+      {...props}
+    >
       {name}
     </button>
   );

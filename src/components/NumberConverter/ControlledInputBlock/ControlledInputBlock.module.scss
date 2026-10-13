@@ -1,12 +1,20 @@
 .controllerBlock {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 10px;
+}
+
+.controllerBlock:has(.header) {
+  grid-template-columns: auto minmax(0, 1fr) auto;
 }
 
 .header {
-  font-size: 20px;
-  color: #b0b0b0;
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  color: #9fb1c9;
   margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
