@@ -7,11 +7,13 @@ import Exchange from './components/Exchange/Exchange.jsx';
 import CalculatedSum from './components/CalculatedSum/CalculatedSum.jsx';
 import Card from './components/Card/Card.jsx';
 import Container from './components/Container/Container.jsx';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle.jsx';
 
 function App() {
   return (
     <main>
       <header>
+        <ThemeToggle />
         <p className="appEyebrow">ФІНАНСОВІ ІНСТРУМЕНТИ</p>
         <Title />
         <p className="appIntro">
