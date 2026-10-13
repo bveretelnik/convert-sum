@@ -11,16 +11,33 @@
 .container {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   padding: 22px;
   border: 1px solid $border;
   border-radius: 20px;
   background: rgba(5, 19, 35, 0.52);
+  animation: reveal 0.4s ease-out both;
 
-  @media (max-width: 760px) {
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 700px) {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 16px;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
