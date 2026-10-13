@@ -9,7 +9,7 @@ const Input = forwardRef(({ value, onChange }, ref) => {
       value={value}
       ref={ref}
       onChange={onChange}
-      placeholder="Put the number"
+      placeholder="Введіть суму"
     />
   );
 });

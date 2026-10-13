@@ -1,6 +1,18 @@
+@use "../../styles/variables" as *;
+
 .footer {
   text-align: center;
-  font-size: 14px;
-  color: #b0b0b0;
-  margin-top: 20px;
+  font-size: 0.82rem;
+  color: $text-secondary;
+  margin-top: 42px;
+  padding-top: 20px;
+  border-top: 1px solid $border;
+
+  p {
+    margin: 6px 0;
+  }
+
+  strong {
+    color: $color-primary-hover;
+  }
 }

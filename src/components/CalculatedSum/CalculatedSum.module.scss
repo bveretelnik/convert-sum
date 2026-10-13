@@ -2,18 +2,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
 }
 .calculateWrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 .calculatedBtn {
-  border: 1px solid transparent;
-  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
-  linear-gradient(90deg, #2f80ed, #56ccf2) border-box;
-  border-radius: 12px;
-  padding: 24px;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid rgba(84, 221, 200, 0.28);
+  border-radius: 14px;
+  padding: 18px;
+  background: rgba(6, 30, 43, 0.56);
 }

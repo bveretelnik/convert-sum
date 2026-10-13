@@ -7,18 +7,18 @@ const CopyToClipboard = ({ value, label = 'Value:' }) => {
   const [copied, setCopied] = useState(false);
 
   return (
-    <div>
-      <div className={styles.clipboardContainer}>
-        <div className={styles.clipboardLabel}>{label}</div>
-        <div
+    <div className={styles.clipboardContainer}>
+      <span className={styles.clipboardLabel}>{label}</span>
+      <button
+          type="button"
           className={clsx(styles.clipboardValue, {
             [styles.clipboardSuccess]: copied,
           })}
           onClick={() => copyTextToClipboard(value, setCopied)}
+          title="Натисніть, щоб скопіювати"
         >
-          {value}
-        </div>
-      </div>
+          {copied ? 'Скопійовано' : value}
+      </button>
     </div>
   );
 };

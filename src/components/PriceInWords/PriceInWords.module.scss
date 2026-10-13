@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+
+.card {
+  grid-column: 1 / -1;
+}
+
+.result {
+  padding: 16px;
+  border: 1px solid rgba(112, 166, 255, 0.26);
+  border-radius: 14px;
+  background: rgba(4, 17, 33, 0.46);
+}

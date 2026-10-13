@@ -2,14 +2,12 @@ import React from 'react';
 import styles from './Footer.module.scss';
 
 const Footer = () => (
-  <div className={styles.footer}>
+  <footer className={styles.footer}>
+    <p>Розраховуйте впевненіше — результати можна одразу скопіювати.</p>
     <p>
-      This is a simple currency converter. Convert from one currency to another.
+      Створено <strong>b_veretelnyk</strong> · {new Date().getFullYear()}
     </p>
-    <p>
-      Develop by <strong>b_veretelnyk</strong> in <strong>2025</strong>.
-    </p>
-  </div>
+  </footer>
 );
 
 export default Footer;

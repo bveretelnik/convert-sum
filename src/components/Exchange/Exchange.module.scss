@@ -1,25 +1,29 @@
 @use "../../styles/variables" as *;
 
 .exchangeContainer {
-  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .exchangeUpdateTime {
-  font-size: 0.9rem;
-  color: $color-primary-hover;
+  margin: 0;
+  color: $text-secondary;
+  font-size: 0.78rem;
 }
 
 .exchangeList {
-  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   list-style-type: none;
-  padding: 24px;
+  padding: 16px;
   margin: 0;
   color: $text-secondary;
-
-  border: 1px solid transparent;
-  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
-  linear-gradient(90deg, #2f80ed, #56ccf2) border-box;
-  border-radius: 12px;
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: rgba(4, 17, 33, 0.46);
 }
 
 .exchangeRate {
@@ -33,16 +37,16 @@
 
 .exchangeDateInputLabel {
   display: block;
-  margin-bottom: 1rem;
   color: $text-secondary;
+  font-size: 0.86rem;
+  font-weight: 600;
 }
 
 .exchangeDateInput {
   margin-left: 8px;
-  font-size: 0.9rem;
-  padding: 0.3rem 0.5rem;
-  border: 1px solid transparent;
-  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
-  linear-gradient(90deg, #2f80ed, #56ccf2) border-box;
-  border-radius: 10px;
+  padding: 0.42rem 0.55rem;
+  color: $text-main;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: rgba(4, 17, 33, 0.6);
 }

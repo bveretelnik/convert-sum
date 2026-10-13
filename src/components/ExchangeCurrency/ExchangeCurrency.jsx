@@ -42,11 +42,11 @@ const ExchangeCurrency = () => {
             setValue('');
             setCurrency('');
           }}
-          name={'Clear'}
+          name={'Очистити'}
         />
       </div>
       <div className={styles.exchangeCurrencyResultWrapper}>
-        <SubTitle value={'Result Exchange'} />
+        <SubTitle value={'Результат конвертації'} />
         <CopyToClipboard value={replaceChar(exchangeRate)} />
       </div>
     </Card>

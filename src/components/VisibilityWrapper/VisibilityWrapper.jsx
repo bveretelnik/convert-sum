@@ -5,13 +5,15 @@ import styles from './VisibilityWrapper.module.scss';
 const VisibilityWrapper = ({ children, title }) => {
   const [isVisible, setIsVisible] = useState(false);
   return (
-    <>
+    <section className={styles.section}>
       <Button
         onClick={() => setIsVisible(!isVisible)}
-        name={`${isVisible ? 'Hide' : 'Show'} ${title}`}
+        variant="secondary"
+        aria-expanded={isVisible}
+        name={`${isVisible ? 'Сховати' : 'Показати'}: ${title}`}
       />
       {isVisible && <div className={styles.container}>{children}</div>}
-    </>
+    </section>
   );
 };
 

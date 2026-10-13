@@ -7,7 +7,7 @@ import ControlledInputBlock from '../NumberConverter/ControlledInputBlock/Contro
 import Pills from '../Pills/Pills.jsx';
 
 const commissionPills = [
-  { id: 1, name: 'privat', commission: 1.02 },
+  { id: 1, name: 'Privat', commission: 1.02 },
   { id: 2, name: 'mono', commission: 1.05 },
 ];
 
@@ -37,7 +37,7 @@ const CommissionCalculation = () => {
         />
       </div>
       <div>
-        <SubTitle value={'Result:'} />
+        <SubTitle value={'Результат:'} />
         <CopyToClipboard value={replaceChar(totalSum)} />
       </div>
     </Card>
