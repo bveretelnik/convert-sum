@@ -17,7 +17,7 @@ function App() {
         <p className="appEyebrow">ФІНАНСОВІ ІНСТРУМЕНТИ</p>
         <Title />
         <p className="appIntro">
-          Швидкі розрахунки податків, сум та валют — в одному місці.
+          Суми, податки й валюти — швидко та зрозуміло в одному місці.
         </p>
       </header>
       <Container>
