@@ -16,7 +16,7 @@
   padding: 22px;
   border: 1px solid $border;
   border-radius: 20px;
-  background: rgba(5, 19, 35, 0.52);
+  background: var(--surface-section);
   animation: reveal 0.4s ease-out both;
 
   @media (max-width: 1000px) {

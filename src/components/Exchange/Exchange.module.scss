@@ -23,7 +23,7 @@
   color: $text-secondary;
   border: 1px solid $border;
   border-radius: 14px;
-  background: rgba(4, 17, 33, 0.46);
+  background: var(--surface-panel);
 }
 
 .exchangeRate {
@@ -48,19 +48,19 @@
   color: $text-main;
   border: 1px solid $border;
   border-radius: 8px;
-  background: rgba(4, 17, 33, 0.6);
-  color-scheme: dark;
+  background: var(--surface-control);
+  color-scheme: inherit;
   cursor: pointer;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &::-webkit-calendar-picker-indicator {
     cursor: pointer;
-    filter: invert(85%) sepia(30%) saturate(541%) hue-rotate(171deg);
+    filter: var(--calendar-icon-filter);
   }
 
   &:focus-visible {
     outline: none;
     border-color: $color-primary;
-    box-shadow: 0 0 0 3px rgba(112, 166, 255, 0.16);
+    box-shadow: 0 0 0 3px var(--focus-ring);
   }
 }

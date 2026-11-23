@@ -27,6 +27,7 @@
   --shadow: rgba(0, 6, 18, 0.32);
   --hover-shadow: rgba(0, 6, 18, 0.42);
   --focus-ring: rgba(112, 166, 255, 0.16);
+  --calendar-icon-filter: invert(85%) sepia(30%) saturate(541%) hue-rotate(171deg);
   color: var(--text-main);
   background: var(--page-base);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -65,6 +66,7 @@
   --shadow: rgba(31, 68, 112, 0.12);
   --hover-shadow: rgba(31, 68, 112, 0.18);
   --focus-ring: rgba(53, 108, 210, 0.16);
+  --calendar-icon-filter: none;
 }
 
 @media (min-width: 701px) {

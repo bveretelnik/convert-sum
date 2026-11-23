@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid rgba(112, 166, 255, 0.26);
+  border: 1px solid var(--border-strong);
   border-radius: 14px;
   padding: 16px;
-  background: rgba(4, 17, 33, 0.46);
+  background: var(--surface-panel);
 }

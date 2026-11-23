@@ -12,7 +12,7 @@
   border-radius: 999px;
   cursor: pointer;
   border: 1px solid $border;
-  background: rgba(4, 17, 33, 0.46);
+  background: var(--surface-control);
   font-size: 0.86rem;
   font-weight: 700;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -24,7 +24,7 @@
 }
 
 .pillActive {
-  color: #061323;
+  color: var(--button-ink);
   border-color: $color-accent;
   background: $color-accent;
 }
