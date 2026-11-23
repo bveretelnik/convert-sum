@@ -1,15 +1,36 @@
 @use "../../styles/variables" as *;
 
 .convectorTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.04em;
   margin: 0;
   color: $text-main;
   font-size: clamp(2.25rem, 6vw, 3.7rem);
   font-weight: 800;
   letter-spacing: -0.055em;
-  text-align: center;
   line-height: 1;
+}
 
-  &::first-letter {
-    color: $color-primary;
-  }
+.brandMark {
+  display: grid;
+  width: 0.74em;
+  height: 0.74em;
+  place-items: center;
+  margin-right: 0.14em;
+  color: var(--button-ink);
+  border-radius: 0.25em;
+  background: linear-gradient(135deg, var(--button-start), var(--button-end));
+  box-shadow: 0 0.1em 0.3em var(--focus-ring);
+  font-size: 0.55em;
+  font-weight: 900;
+  transform: translateY(-0.03em);
+}
+
+.sum {
+  color: $color-primary;
+  background: linear-gradient(135deg, $color-primary, $color-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
