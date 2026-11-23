@@ -3,8 +3,15 @@ import styles from './ThemeToggle.module.scss';
 
 const THEME_STORAGE_KEY = 'convert-sum-theme';
 
-const getInitialTheme = () =>
-  window.localStorage.getItem(THEME_STORAGE_KEY) === 'light' ? 'light' : 'dark';
+const getInitialTheme = () => {
+  try {
+    return window.localStorage.getItem(THEME_STORAGE_KEY) === 'light'
+      ? 'light'
+      : 'dark';
+  } catch {
+    return 'dark';
+  }
+};
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(getInitialTheme);
@@ -12,7 +19,11 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch {
+      // The interface still works when browser storage is unavailable.
+    }
   }, [theme]);
 
   return (

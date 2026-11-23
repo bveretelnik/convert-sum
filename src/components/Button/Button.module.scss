@@ -14,7 +14,7 @@
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 
   &:focus-visible {
-    outline: 3px solid rgba(112, 166, 255, 0.35);
+    outline: 3px solid var(--focus-ring);
     outline-offset: 2px;
   }
 
@@ -24,22 +24,26 @@
 }
 
 .primary {
-  color: #061323;
-  background: linear-gradient(135deg, #78aaff, #75d9e5);
-  box-shadow: 0 8px 20px rgba(70, 141, 249, 0.2);
+  color: var(--button-ink);
+  background: linear-gradient(135deg, var(--button-start), var(--button-end));
+  box-shadow: 0 8px 20px var(--focus-ring);
 
   &:hover {
-    background: linear-gradient(135deg, #9abfff, #8ae8ef);
+    background: linear-gradient(
+      135deg,
+      var(--button-start-hover),
+      var(--button-end-hover)
+    );
   }
 }
 
 .secondary {
   color: $color-primary-hover;
   border-color: $border;
-  background: rgba(16, 40, 68, 0.6);
+  background: var(--surface-panel);
 
   &:hover {
-    border-color: rgba(112, 166, 255, 0.55);
-    background: rgba(24, 57, 92, 0.78);
+    border-color: var(--border-strong);
+    background: var(--surface-section);
   }
 }

@@ -1,3 +1,5 @@
+@use "../../../styles/variables" as *;
+
 .controllerBlock {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -12,7 +14,7 @@
 .header {
   flex: 0 0 auto;
   font-size: 0.78rem;
-  color: #9fb1c9;
+  color: $text-secondary;
   margin: 0;
   font-weight: 700;
   letter-spacing: 0.04em;

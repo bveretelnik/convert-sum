@@ -10,7 +10,7 @@
   color: $text-secondary;
   border: 1px solid $border;
   border-radius: 14px;
-  background: rgba(4, 17, 33, 0.46);
+  background: var(--surface-panel);
 }
 
 .taxInfoValue {
